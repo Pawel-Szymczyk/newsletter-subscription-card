@@ -1,79 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/index.css">
-        <title>Newslatter subscription card</title>
-    </head>
-    <body>
-        <div class="background">
-            <css-doodle>
-                :doodle {
-                    @grid: 7 / 100vmax / inherit;
-                }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Newslatter subscription card</title>
+  </head>
+  <body>
+    <div class="background">
+      <css-doodle>
+        :doodle { @grid: 7 / 100vmax / inherit; } @even { @shape: clover 5;
+        background: @pick(#FE6108, #ddd, #FF354D); border-radius: 50%; opacity:
+        @rand(0.2, 0.35); transform: scale(@r(0.5, 1.2)); animation: fall
+        @rand(20s, 60s) linear infinite; animation-delay: 0s; } @keyframes fall
+        { 0% { transform: translateY(-20vh) translateX(@rand(-20vw, 20vw))
+        scale(@r(0.5, 1.2)); opacity: 0; } 50% { opacity: 1; } 100% { transform:
+        translateY(120vh) translateX(@rand(-30vw, 30vw)) scale(@r(0.5, 1.2));
+        opacity: 0; } }
+      </css-doodle>
+    </div>
 
-                @even {
-                    @shape: clover 5;
-                    background: @pick(#FE6108, #ddd, #FF354D);
-                    border-radius: 50%;
-                    opacity: @rand(0.2, 0.35);
-                    transform: scale(@r(0.5, 1.2));
-
-                    animation: fall @rand(20s, 60s) linear infinite;
-                    animation-delay: 0s;
-                }
-
-                @keyframes fall {
-                0% {
-                    transform:
-                    translateY(-20vh)
-                    translateX(@rand(-20vw, 20vw))
-                    scale(@r(0.5, 1.2));
-                    opacity: 0;
-                }
-
-                50% {
-                    opacity: 1;
-                }
-
-                100% {
-                    transform:
-                    translateY(120vh)
-                    translateX(@rand(-30vw, 30vw))
-                    scale(@r(0.5, 1.2));
-                    opacity: 0;
-                }
-                }
-            </css-doodle>
+    <div class="card-container">
+      <button class="card-close-btn"></button>
+      <div class="card-box">
+        <div class="card-content-box">
+          <div class="card-image"></div>
+          <div class="card-message">
+            <h2>Get Our Weekly</h2>
+            <h1>Newsletter</h1>
+            <p>
+              Get weekly updates on the newest design stories, case studies and
+              tips right in your mailbox.
+              <span>Subscribe now!</span>
+            </p>
+          </div>
         </div>
-        
-        <div class="card-container">
-            <button class="card-close-btn"></button>
-            <div class="card-box">
-                <div class="card-content-box">
-                    <div class="card-image"></div>
-                    <div class="card-message">
-                        <h2>Get Our Weekly</h2>
-                        <h1>Newsletter</h1>
-                        <p>Get weekly updates on the newest design stories, case studies and tips right in your mailbox. 
-                            <span>Subscribe now!</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card-form-box">
-                    <form>
-                        <input type="email" placeholder="Email Address" />
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-            <p>Your email is safe with us, we dont spam.</p>
+        <div class="card-form-box">
+          <form>
+            <input type="email" placeholder="Email Address" />
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
+      </div>
+      <p>Your email is safe with us, we dont spam.</p>
+    </div>
 
-        <!-- <div class="body-decor decor-1"></div>
+    <!-- <div class="body-decor decor-1"></div>
         <div class="body-decor decor-2"></div> -->
 
-        <script src="https://esm.sh/css-doodle/css-doodle.min.js?raw"></script>
-    </body>
+    <script src="https://esm.sh/css-doodle/css-doodle.min.js?raw"></script>
+  </body>
 </html>
